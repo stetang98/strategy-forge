@@ -92,12 +92,20 @@ Always set both `fast_ma` and `slow_ma` explicitly (don't rely on defaults), and
 `assets/<name>.json`. Ready-made examples live in `assets/` (`trend-rider`,
 `cake-trend-rider`, `regime-guard`, `fgi-contrarian`).
 
-### Step 2 — (Optional) Show the live signal
+### Step 2 — Show the live CMC signal (Best Use of Agent Hub)
 
-If the CMC MCP is connected, read the current context so the user sees today's setup:
-`get_global_metrics_latest` (Fear & Greed, altcoin-season), `get_crypto_quotes_latest`
-and `get_crypto_technical_analysis` (price, trend) for the spec's symbol. This is
-illustrative only; it does not change the backtest.
+Pull a live CoinMarketCap reading so the user sees today's setup:
+
+```bash
+python scripts/market_context.py --symbol BNB
+```
+
+With `CMC_API_KEY` set (a free Basic key), this returns live Fear & Greed, BTC/ETH
+dominance, price, and market cap from the CMC Agent Hub; without a key it falls back to
+the CMC sandbox (mock data) so the integration still runs. Every backtest run is also
+annotated with this live CMC reading. It is illustrative — it does not change the
+(keyless, reproducible) backtest. The same CMC client can also source the Fear & Greed
+series for sentiment strategies (`forge.data.cmc.make_fng_fetcher`).
 
 ### Step 3 — Run the backtest (black box)
 

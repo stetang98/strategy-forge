@@ -50,12 +50,12 @@ strategy must clear.
 
 ## How it uses the CoinMarketCap Agent Hub (Best Use of Agent Hub)
 
-- **Two access paths:** the CMC **MCP** server for live signal readings and the demo
-  (`get_global_metrics_latest` for Fear & Greed + altcoin-season, `get_crypto_quotes_latest`,
-  `get_crypto_technical_analysis`, `trending_crypto_narratives`); and a **keyless,
-  reproducible** path for backtests so any judge re-runs every number with no API key.
-- **Keys on CMC's differentiated data** (Fear & Greed, altcoin-season, derivatives,
-  narratives), not just price.
+- **Two access paths:** a live CoinMarketCap path (`scripts/market_context.py` + every
+  backtest run pulls live Fear & Greed, BTC/ETH dominance, price, market cap — **verified
+  live against the CMC API**); and a **keyless, reproducible** path for backtests so any
+  judge re-runs every number with no API key.
+- **Keys on CMC's differentiated data** (Fear & Greed, dominance, market structure), not
+  just price. The same CMC client can source the Fear & Greed series for sentiment strategies.
 - Ships in the official CMC **`SKILL.md`** Agent-Skill format.
 
 ## Reproduce in 30 seconds (no API key)

@@ -7,3 +7,4 @@ hmmlearn>=0.3.2
 pydantic>=2.7
 requests>=2.32
 matplotlib>=3.8
+python-coinmarketcap>=0.6

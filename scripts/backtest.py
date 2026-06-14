@@ -59,6 +59,11 @@ def main(argv: list[str] | None = None) -> int:
     bh = s["benchmark_total_return"]
     print(f"BUY & HOLD    return {bh * 100:+.1f}%" if bh is not None else "BUY & HOLD    n/a")
     print(f"validation: {s['validation']}   |   not financial advice")
+    ctx = s.get("cmc_context")
+    if ctx:
+        print(f"CMC live (Agent Hub): Fear&Greed {ctx.get('fear_greed')} "
+              f"({ctx.get('fear_greed_label')}) · BTC dom {ctx.get('btc_dominance')} · "
+              f"{s['symbol']} ${ctx.get('price')}")
     print(f"wrote: {out['paths']['metrics']}")
     print(f"wrote: {out['paths']['tearsheet']}")
     return 0

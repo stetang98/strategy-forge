@@ -38,9 +38,21 @@ Get a free Basic key at <https://pro.coinmarketcap.com/signup> (30 calls/min, 10
 credits/month — ample for this Skill). Resolve symbols to numeric CMC IDs once via
 `search_cryptos` and cache them; batch multi-coin calls to respect the rate limit.
 
+## Live readout (verified against the CMC API)
+
+`forge/data/cmc.py` + `scripts/market_context.py` pull a live snapshot via the CMC REST
+API (the `coinmarketcapapi` client, which also supports `sandbox=True` for keyless
+plumbing checks). Every backtest run is annotated with the same live reading:
+
+```bash
+python scripts/market_context.py --symbol BNB
+# === CoinMarketCap Agent Hub :: BNB market context [LIVE · CMC Pro] ===
+#   price: 611.12 · Fear & Greed: 21 (Fear) · BTC dominance: 58.8% · total mcap: $2.19T
+```
+
 ## Why this wins "Best Use of Agent Hub"
 
-- Uses **multiple access paths** (MCP for live + a keyless reproducible path for backtests).
-- Keys on CMC's **differentiated** data (Fear & Greed, altcoin-season, derivatives,
-  narratives), not just price.
+- Uses **multiple access paths** (live CMC REST/MCP + a keyless reproducible path for backtests).
+- Keys on CMC's **differentiated** data (Fear & Greed, dominance, market structure), not just price.
+- **Real, verified-live integration** — not a README mention.
 - Ships as an installable **CMC Agent-Hub Skill** in the official `SKILL.md` format.

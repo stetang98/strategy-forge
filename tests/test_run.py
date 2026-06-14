@@ -83,3 +83,35 @@ class TestRunSpec:
 
         with pytest.raises(ValueError, match="rows"):
             run.run_spec(_trend_spec(), tmp_path, data_loader=short_loader)
+
+
+class TestBaseSymbol:
+    @pytest.mark.parametrize("pair,base", [
+        ("BNBUSDT", "BNB"), ("ETHUSDC", "ETH"), ("BTCUSDT", "BTC"), ("SOLUSD", "SOL"),
+        ("USDCUSDT", "USDC"), ("FDUSDUSDT", "FDUSD"),
+        ("FDUSD", "FDUSD"), ("BUSD", "BUSD"), ("TUSD", "TUSD"), ("USDT", "USDT"),
+    ])
+    def test_maps_pair_to_cmc_base(self, pair, base):
+        assert run._base_symbol(pair) == base
+
+
+class TestCmcContext:
+    def test_no_key_means_no_context(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(run._env, "load_dotenv", lambda *a, **k: None)
+        monkeypatch.delenv("CMC_API_KEY", raising=False)
+        out = run.run_spec(_trend_spec(), tmp_path, data_loader=_loader_factory({}))
+        assert out["summary"]["cmc_context"] is None
+
+    def test_key_attaches_live_cmc_snapshot(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(run._env, "load_dotenv", lambda *a, **k: None)
+        monkeypatch.setenv("CMC_API_KEY", "dummy-key")
+        import forge.data.cmc as cmc_mod
+        monkeypatch.setattr(cmc_mod, "make_client", lambda *a, **k: object())
+        monkeypatch.setattr(cmc_mod, "live_market_context",
+                            lambda client, sym: {"symbol": sym, "fear_greed": 18})
+        out = run.run_spec(_trend_spec(), tmp_path, data_loader=_loader_factory({}))
+        ctx = out["summary"]["cmc_context"]
+        assert ctx is not None
+        assert ctx["fear_greed"] == 18
+        assert ctx["symbol"] == "BNB"   # BNBUSDT -> CMC base symbol BNB
+

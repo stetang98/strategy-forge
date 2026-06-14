@@ -53,6 +53,24 @@ between a profit and near-total loss.
   <sub><b>BNB:</b> captures the bull (+840%, Sharpe 1.03) and sits in cash through the 2022 bear.</sub>
 </p>
 
+## Live CoinMarketCap (Best Use of Agent Hub)
+
+Backtests are keyless and reproducible; **CoinMarketCap is layered for live signals**.
+With a free CMC key in `.env`, `scripts/market_context.py` — and *every* backtest run —
+pull a real-time reading from the CMC Agent Hub (verified live against the CMC API):
+
+```text
+$ python scripts/market_context.py --symbol BNB
+=== CoinMarketCap Agent Hub :: BNB market context [LIVE · CMC Pro] ===
+  price:             611.12
+  Fear & Greed:      21 (Fear)
+  BTC dominance:     58.8%
+  total market cap:  $2.19T
+```
+
+Two access paths (live CMC + a keyless reproducible path), keyed on CMC's differentiated
+data — Fear & Greed, dominance, market structure — not just price.
+
 ## Why it's different
 
 - **A strategy *generator*, not one hard-coded strategy.** Intent → spec → backtest. The
