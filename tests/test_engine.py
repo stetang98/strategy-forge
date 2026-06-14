@@ -94,6 +94,15 @@ class TestRunBacktest:
         assert res.stats_oos is not None
         assert res.weights.index.equals(df.index)
 
+    def test_walk_forward_regime_gate_runs_and_has_oos(self):
+        df = _two_regime_df()
+        spec = _spec(regime_gate={"enabled": True, "n_states": 2, "vol_lookback_days": 10},
+                     validation={"scheme": "walk_forward", "train_days": 120, "test_days": 60})
+        res = engine.run_backtest(df, spec)
+        assert res.oos_start is not None
+        assert res.stats_oos is not None
+        assert res.weights.index.equals(df.index)
+
     def test_scheme_none_has_no_oos_split(self):
         df = _two_regime_df()
         spec = _spec(regime_gate={"enabled": False},

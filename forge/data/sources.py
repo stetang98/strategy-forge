@@ -104,12 +104,21 @@ def _to_ms(when: Any) -> int:
     return int((ts - pd.Timestamp("1970-01-01")) // pd.Timedelta(milliseconds=1))
 
 
+# A legitimate response (full Fear&Greed history, one OHLCV page) is well under this.
+_MAX_RESPONSE_BYTES = 32 * 1024 * 1024
+
+
 def _default_http_get(url: str, params: Optional[dict] = None, timeout: int = 30) -> Any:
+    import json as _json
+
     import requests  # imported lazily so tests that inject http_get need no network stack
 
-    resp = requests.get(url, params=params, timeout=timeout)
+    resp = requests.get(url, params=params, timeout=timeout, stream=True)
     resp.raise_for_status()
-    return resp.json()
+    body = resp.raw.read(_MAX_RESPONSE_BYTES + 1, decode_content=True)
+    if len(body) > _MAX_RESPONSE_BYTES:
+        raise ValueError(f"response from {url!r} exceeds {_MAX_RESPONSE_BYTES} bytes")
+    return _json.loads(body)
 
 
 def fetch_ohlcv(

@@ -9,12 +9,18 @@ at the boundary rather than producing a silently wrong backtest.
 from __future__ import annotations
 
 import datetime
+import re
 from typing import Literal, Optional
 
-from pydantic import BaseModel, ConfigDict, Field, model_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 # Intervals supported by the data layer (forge.data.sources).
 Interval = Literal["1m", "3m", "5m", "15m", "30m", "1h", "2h", "4h", "6h", "12h", "1d", "1w"]
+
+# `name` becomes a filename; restrict it to prevent path traversal. `symbol` becomes
+# an HTTP query value; restrict it to the exchange pair format.
+_SAFE_NAME = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_\-]{0,63}$")
+_SAFE_SYMBOL = re.compile(r"^[A-Z0-9]{2,20}$")
 
 
 class _Strict(BaseModel):
@@ -112,6 +118,23 @@ class StrategySpec(_Strict):
     sizing: SizingSpec = Field(default_factory=SizingSpec)
     costs: CostsSpec = Field(default_factory=CostsSpec)
     validation: ValidationSpec = Field(default_factory=ValidationSpec)
+
+    @field_validator("name")
+    @classmethod
+    def _safe_name(cls, v: str) -> str:
+        if not _SAFE_NAME.fullmatch(v):
+            raise ValueError(
+                "name must be 1-64 chars, start alphanumeric, then only letters/digits/-/_ "
+                "(it becomes a filename; no path separators)"
+            )
+        return v
+
+    @field_validator("symbol")
+    @classmethod
+    def _safe_symbol(cls, v: str) -> str:
+        if not _SAFE_SYMBOL.fullmatch(v):
+            raise ValueError("symbol must be 2-20 uppercase letters/digits, e.g. BNBUSDT")
+        return v
 
     @model_validator(mode="after")
     def _check_date_order(self) -> "StrategySpec":

@@ -90,6 +90,25 @@ class TestStrategySpecValidation:
                  "start": "2025-01-01", "end": "2020-01-01"}
             )
 
+    def test_rejects_unsafe_name(self):
+        for bad in ["../evil", "/tmp/x", "a/b", "a b", "-leading"]:
+            with pytest.raises(ValidationError):
+                StrategySpec.model_validate({"name": bad, "signal": {"type": "ts_momentum"}})
+
+    def test_rejects_bad_symbol(self):
+        for bad in ["bnb usdt", "BNB-USDT", "x", "BNB/USDT"]:
+            with pytest.raises(ValidationError):
+                StrategySpec.model_validate(
+                    {"name": "x", "symbol": bad, "signal": {"type": "ts_momentum"}}
+                )
+
+    def test_accepts_kebab_name_and_clean_symbol(self):
+        spec = StrategySpec.model_validate(
+            {"name": "cake-trend-rider", "symbol": "CAKEUSDT", "signal": {"type": "ts_momentum"}}
+        )
+        assert spec.name == "cake-trend-rider"
+        assert spec.symbol == "CAKEUSDT"
+
     def test_parses_iso_dates(self):
         spec = StrategySpec.model_validate(
             {"name": "x", "signal": {"type": "ts_momentum"},
