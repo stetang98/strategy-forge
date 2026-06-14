@@ -1,36 +1,36 @@
 {
-  "name": "cake-trend-rider",
-  "symbol": "CAKEUSDT",
+  "name": "trend-rider",
+  "symbol": "BNBUSDT",
   "interval": "1d",
   "signal": "ema_crossover",
   "period": [
-    "2021-02-19",
+    "2021-01-01",
     "2026-06-13"
   ],
   "validation": "walk_forward",
-  "oos_start": "2022-02-19",
+  "oos_start": "2022-01-01",
   "stats_full": {
-    "total_return": 0.3894686284162958,
-    "sharpe": 0.3926874108101083,
-    "sortino": 0.3701209852163933,
-    "calmar": 0.08939400358808405,
-    "max_drawdown": -0.7141381860900033,
-    "win_rate": 0.42857142857142855,
-    "n_trades": 21
+    "total_return": 8.402437527776186,
+    "sharpe": 1.0306222546980017,
+    "sortino": 1.143391668108853,
+    "calmar": 0.8815058970738444,
+    "max_drawdown": -0.5770640464758905,
+    "win_rate": 0.4166666666666667,
+    "n_trades": 24
   },
   "stats_oos": {
-    "total_return": 0.1648268609107595,
-    "sharpe": 0.33896127172307267,
-    "sortino": 0.3522282389711302,
-    "calmar": 0.05039723658476638,
-    "max_drawdown": -0.7141381860900033,
-    "win_rate": 0.3684210526315789,
-    "n_trades": 19
+    "total_return": 0.5181412825187117,
+    "sharpe": 0.43378672758361436,
+    "sortino": 0.4648233645305888,
+    "calmar": 0.21750390995385627,
+    "max_drawdown": -0.45229008252497394,
+    "win_rate": 0.3333333333333333,
+    "n_trades": 21
   },
-  "benchmark_total_return": -0.9286468786310341,
+  "benchmark_total_return": 15.138468136022151,
   "spec": {
-    "name": "cake-trend-rider",
-    "symbol": "CAKEUSDT",
+    "name": "trend-rider",
+    "symbol": "BNBUSDT",
     "interval": "1d",
     "start": "2021-01-01",
     "end": "2026-06-13",

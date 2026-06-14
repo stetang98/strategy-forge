@@ -17,5 +17,5 @@ pydantic>=2.7
 # HTTP for keyless data sources (binance.vision, alternative.me) + CMC REST
 requests>=2.32
 
-# Optional CoinMarketCap-branded data provider (imports as `coinmarketcapapi`)
-python-coinmarketcap>=0.6
+# The optional CoinMarketCap-branded provider (`coinmarketcapapi`) is NOT required for
+# backtests (they are keyless). Install it only for CMC live signals: pip install -e .[cmc]

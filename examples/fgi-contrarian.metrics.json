@@ -1,0 +1,69 @@
+{
+  "name": "fgi-contrarian",
+  "symbol": "BNBUSDT",
+  "interval": "1d",
+  "signal": "fng_contrarian",
+  "period": [
+    "2021-01-01",
+    "2026-06-13"
+  ],
+  "validation": "none",
+  "oos_start": null,
+  "stats_full": {
+    "total_return": -0.8260670200686951,
+    "sharpe": -0.32067165634300404,
+    "sortino": -0.31784516515192,
+    "calmar": -0.3281252940374378,
+    "max_drawdown": -0.8367457889341569,
+    "win_rate": 0.5,
+    "n_trades": 6
+  },
+  "stats_oos": null,
+  "benchmark_total_return": 15.138468136022151,
+  "spec": {
+    "name": "fgi-contrarian",
+    "symbol": "BNBUSDT",
+    "interval": "1d",
+    "start": "2021-01-01",
+    "end": "2026-06-13",
+    "initial_cash": 10000.0,
+    "signal": {
+      "type": "fng_contrarian",
+      "lookback_days": 30,
+      "fast_ma": 10,
+      "slow_ma": 100,
+      "fng_buy_below": 25,
+      "fng_sell_above": 75
+    },
+    "regime_gate": {
+      "enabled": false,
+      "type": "hmm",
+      "n_states": 2,
+      "vol_lookback_days": 20,
+      "trade_in": "trend"
+    },
+    "sentiment_overlay": {
+      "enabled": false,
+      "fng_extreme_fear": 25,
+      "fng_extreme_greed": 75,
+      "fear_boost": 1.15,
+      "greed_trim": 0.5
+    },
+    "sizing": {
+      "type": "full",
+      "target_vol": 0.2,
+      "vol_lookback_days": 20,
+      "max_leverage": 1.0,
+      "fraction": 1.0
+    },
+    "costs": {
+      "slippage_bps": 30.0,
+      "fee_bps": 25.0
+    },
+    "validation": {
+      "scheme": "none",
+      "train_days": 365,
+      "test_days": 90
+    }
+  }
+}

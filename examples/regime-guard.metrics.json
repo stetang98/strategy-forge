@@ -1,8 +1,8 @@
 {
-  "name": "cake-trend-rider",
+  "name": "regime-guard",
   "symbol": "CAKEUSDT",
   "interval": "1d",
-  "signal": "ema_crossover",
+  "signal": "ts_momentum",
   "period": [
     "2021-02-19",
     "2026-06-13"
@@ -10,33 +10,33 @@
   "validation": "walk_forward",
   "oos_start": "2022-02-19",
   "stats_full": {
-    "total_return": 0.3894686284162958,
-    "sharpe": 0.3926874108101083,
-    "sortino": 0.3701209852163933,
-    "calmar": 0.08939400358808405,
-    "max_drawdown": -0.7141381860900033,
-    "win_rate": 0.42857142857142855,
-    "n_trades": 21
+    "total_return": 0.13070789761848856,
+    "sharpe": 0.2179561955126366,
+    "sortino": 0.13819408078790157,
+    "calmar": 0.043019606867169,
+    "max_drawdown": -0.5435089880833357,
+    "win_rate": 0.4444444444444444,
+    "n_trades": 18
   },
   "stats_oos": {
-    "total_return": 0.1648268609107595,
-    "sharpe": 0.33896127172307267,
-    "sortino": 0.3522282389711302,
-    "calmar": 0.05039723658476638,
-    "max_drawdown": -0.7141381860900033,
-    "win_rate": 0.3684210526315789,
-    "n_trades": 19
+    "total_return": 0.13070789761848856,
+    "sharpe": 0.24188581626074693,
+    "sortino": 0.17022001062128828,
+    "calmar": 0.05313194239673327,
+    "max_drawdown": -0.5435089880833357,
+    "win_rate": 0.4444444444444444,
+    "n_trades": 18
   },
   "benchmark_total_return": -0.9286468786310341,
   "spec": {
-    "name": "cake-trend-rider",
+    "name": "regime-guard",
     "symbol": "CAKEUSDT",
     "interval": "1d",
     "start": "2021-01-01",
     "end": "2026-06-13",
     "initial_cash": 10000.0,
     "signal": {
-      "type": "ema_crossover",
+      "type": "ts_momentum",
       "lookback_days": 30,
       "fast_ma": 10,
       "slow_ma": 50,
@@ -44,14 +44,14 @@
       "fng_sell_above": 80
     },
     "regime_gate": {
-      "enabled": false,
+      "enabled": true,
       "type": "hmm",
       "n_states": 2,
       "vol_lookback_days": 20,
       "trade_in": "trend"
     },
     "sentiment_overlay": {
-      "enabled": false,
+      "enabled": true,
       "fng_extreme_fear": 25,
       "fng_extreme_greed": 75,
       "fear_boost": 1.15,

@@ -9,8 +9,9 @@ Pick the signal that matches the user's words; compose gates/overlays for nuance
 positive across independent studies, and it *exits* downtrends, which is what protects
 capital on assets that crash.
 
-- `ema_crossover` (fast 10 / slow 50) is the robust default — captures most of a bull
-  run and steps aside in bear markets.
+- `ema_crossover` with **fast 10 / slow 50** is the robust workhorse — captures most of
+  a bull run and steps aside in bear markets. Always specify both `fast_ma` and `slow_ma`
+  explicitly (the schema default for `slow_ma` is 100, a slower signal).
 - `ts_momentum` adds a trailing-return confirmation; slightly more conservative.
 - Pair with `sizing.vol_target` so position size shrinks when volatility spikes.
 

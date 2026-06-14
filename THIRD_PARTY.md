@@ -7,7 +7,7 @@ work. We thank their authors.
 
 | Project | License | Use |
 |---|---|---|
-| [vectorbt](https://github.com/polakowo/vectorbt) | Apache-2.0 + Commons Clause | Backtesting engine (portfolio simulation, stats, plots). We do **not** resell vectorbt; we import it. |
+| [vectorbt](https://github.com/polakowo/vectorbt) | Apache-2.0 + Commons Clause | Backtesting engine (portfolio simulation, stats, plots). We do **not** resell vectorbt; we import it. Note: the Commons Clause restricts selling software whose value derives primarily from vectorbt — anyone building a *commercial* product on this Skill must comply with vectorbt's license. |
 | [hmmlearn](https://github.com/hmmlearn/hmmlearn) | BSD-3-Clause | Hidden Markov Model for market-regime detection. |
 | [pydantic](https://github.com/pydantic/pydantic) | MIT | Strategy-spec schema validation. |
 | [python-coinmarketcap (rsz44)](https://github.com/rsz44/python-coinmarketcap) | MIT | Optional CoinMarketCap data provider (`coinmarketcapapi`). |

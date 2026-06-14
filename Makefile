@@ -18,11 +18,14 @@ cov:
 
 # Run the headline strategy backtest from its spec
 backtest:
-	$(PY) scripts/backtest.py --spec assets/regime-momentum.json --out examples
+	$(PY) scripts/backtest.py --spec assets/trend-rider.json --out examples
 
-# Backtest the baseline the headline beats
+# The full demo: headline on BNB, the same strategy surviving CAKE's crash,
+# the risk-managed variant, and the baseline they beat.
 demo:
-	$(PY) scripts/backtest.py --spec assets/regime-momentum.json --out examples
+	$(PY) scripts/backtest.py --spec assets/trend-rider.json --out examples
+	$(PY) scripts/backtest.py --spec assets/cake-trend-rider.json --out examples
+	$(PY) scripts/backtest.py --spec assets/regime-guard.json --out examples
 	$(PY) scripts/backtest.py --spec assets/fgi-contrarian.json --out examples
 
 clean:

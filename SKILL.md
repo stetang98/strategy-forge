@@ -87,8 +87,10 @@ Mapping cues:
 - Always keep `validation.scheme` = `"walk_forward"` (or `"holdout"`) for an honest,
   out-of-sample number. Only use `"none"` for a quick in-sample sketch, and say so.
 
-Write the spec to a file, e.g. `assets/<name>.json`. Ready-made examples live in
-`assets/` (`trend-rider`, `regime-guard`, `fgi-contrarian`).
+Always set both `fast_ma` and `slow_ma` explicitly (don't rely on defaults), and keep
+`name` to letters/digits/hyphens (it becomes a filename). Write the spec to a file, e.g.
+`assets/<name>.json`. Ready-made examples live in `assets/` (`trend-rider`,
+`cake-trend-rider`, `regime-guard`, `fgi-contrarian`).
 
 ### Step 2 — (Optional) Show the live signal
 
