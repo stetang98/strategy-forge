@@ -3,8 +3,10 @@
 Project: **Strategy Forge** · Hackathon: **BNB Hack: AI Trading Agent Edition** ·
 Track: **Track 2 — Strategy Skills** (+ Best Use of CoinMarketCap Agent Hub).
 
-> ⚠️ Only one thing still needed: a **Demo video (YouTube)**. Everything else below is final & paste-ready.
-> This file is kept in sync as we go — it has every field for every tab.
+> A Demo video is **optional** — the hackathon accepts "public repo + a demo link/video
+> **OR** clear setup instructions", and this repo already provides the repo + setup +
+> example charts. A short video only adds to the "demo" score; you can submit without it.
+> This file is kept in sync as we go — every field for every tab.
 
 ---
 
@@ -36,7 +38,9 @@ https://github.com/stetang98/strategy-forge
 
 **Project website** *(optional)*: *(leave blank)*
 
-**Demo video** ⚠️: record + upload to YouTube, paste the link.
+**Demo video** *(optional, bonus)*: a 75s screen-recording lifts the demo score (script
+below). Not required — the repo + setup instructions already satisfy the requirement, so
+you can leave this blank and submit, then add a video later (BUIDLs are editable).
 
 **Social links**:
 ```
@@ -191,4 +195,4 @@ screen ~2–3s. The CAKE chart (0:33) is the money shot — let it linger.
 - [x] TAB 3 Team — invite blank · team information
 - [x] TAB 4 Contact — email · telegram · X
 - [x] TAB 5 Submission — Track 2
-- [ ] **Demo video (YouTube)** — record + upload, paste link  ← only remaining blocker
+- [ ] *(optional)* **Demo video** — bonus for the demo score; NOT required (repo + setup instructions already satisfy it). Can be added after submitting.
