@@ -189,6 +189,22 @@ screen ~2–3s. The CAKE chart (0:33) is the money shot — let it linger.
 
 ---
 
+## (OPTIONAL) MILESTONE / PROGRESS UPDATE
+
+Not required for submission — a nice engagement touch on the BUIDL page. If you add one:
+
+- **Milestone type**: `Milestone`  *(avoid "Funding information" — the hackathon bans fundraising during the event)*
+- **Title**:
+  ```
+  v1.0 — Submitted to BNB Hack Track 2
+  ```
+- **Description**:
+  ```
+  Strategy Forge v1.0 is live: a CoinMarketCap Agent-Hub Skill that turns a plain-English strategy idea into a walk-forward, cost-adjusted, keyless-reproducible backtest. 122 tests (~94% coverage), verified-live CMC Agent Hub integration, look-ahead-safe execution. Submitted to BNB Hack: AI Trading Agent Edition — Track 2 (Strategy Skills). Repo: https://github.com/stetang98/strategy-forge
+  ```
+
+---
+
 ### Checklist
 - [x] TAB 1 Profile — name · logo · vision · category (L1=BNB Chain) · AI-Agent=No · GitHub · socials
 - [x] TAB 2 Details — full image-rich body
