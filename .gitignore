@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtualenv
+.venv/
+venv/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Secrets / local config
+.env
+*.local
+
+# Data cache (reproducible backtests re-fetch from keyless sources)
+.forge_cache/
+*.sqlite
+*.sqlite3
+
+# OS
+.DS_Store
+
+# Generated tearsheets land in examples/ only when explicitly committed
+/tmp_*

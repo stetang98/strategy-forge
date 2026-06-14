@@ -1,0 +1,21 @@
+# Strategy Forge — core runtime (verified working on Python 3.13, 2026-06-14)
+
+# Backtest engine
+vectorbt==1.0.0
+numpy>=2.2,<3
+pandas>=2.2,<3
+scipy>=1.13
+scikit-learn>=1.5
+matplotlib>=3.8
+
+# Market-regime detection (Hidden Markov Model)
+hmmlearn>=0.3.2
+
+# Strategy-spec schema validation
+pydantic>=2.7
+
+# HTTP for keyless data sources (binance.vision, alternative.me) + CMC REST
+requests>=2.32
+
+# Optional CoinMarketCap-branded data provider (imports as `coinmarketcapapi`)
+python-coinmarketcap>=0.6

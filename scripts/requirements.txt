@@ -1,0 +1,9 @@
+# Dependencies for the Skill's black-box backtest script (scripts/backtest.py).
+# Mirrors the engine runtime so the Skill works standalone in a fresh venv.
+vectorbt==1.0.0
+numpy>=2.2,<3
+pandas>=2.2,<3
+hmmlearn>=0.3.2
+pydantic>=2.7
+requests>=2.32
+matplotlib>=3.8
