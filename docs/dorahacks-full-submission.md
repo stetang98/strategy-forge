@@ -195,9 +195,9 @@ Not required for submission — a nice engagement touch on the BUIDL page. If yo
 
 - **Milestone type**: `里程碑 / Milestone`  *(avoid "Funding information" — the hackathon bans fundraising during the event)*
 - **Date**: keep default (today) — e.g. `2026/06/14`
-- **Details**:
+- **Details** (≤256 chars):
   ```
-  Strategy Forge v1.0 is live — a CoinMarketCap Agent-Hub Skill that turns a plain-English strategy idea into a walk-forward, cost-adjusted, keyless-reproducible backtest. 122 tests (~94% coverage), verified-live CMC Agent Hub integration, look-ahead-safe execution. Submitted to BNB Hack: AI Trading Agent Edition — Track 2 (Strategy Skills).
+  Strategy Forge v1.0 shipped — a CoinMarketCap Skill: describe a strategy in plain English, get a walk-forward, keyless-reproducible backtest. 122 tests, live CMC Agent Hub integration. Submitted to BNB Hack Track 2 (Strategy Skills).
   ```
 - **Related links**:
   - Related webpage: *(blank)*
