@@ -1,0 +1,77 @@
+{
+  "name": "trend-rider",
+  "symbol": "CAKEUSDT",
+  "interval": "1d",
+  "signal": "ema_crossover",
+  "period": [
+    "2021-02-19",
+    "2026-06-13"
+  ],
+  "validation": "walk_forward",
+  "oos_start": "2022-02-19",
+  "stats_full": {
+    "total_return": 0.3894686284162958,
+    "sharpe": 0.3926874108101083,
+    "sortino": 0.3701209852163933,
+    "calmar": 0.08939400358808405,
+    "max_drawdown": -0.7141381860900033,
+    "win_rate": 0.42857142857142855,
+    "n_trades": 21
+  },
+  "stats_oos": {
+    "total_return": 0.1648268609107595,
+    "sharpe": 0.33896127172307267,
+    "sortino": 0.3522282389711302,
+    "calmar": 0.05039723658476638,
+    "max_drawdown": -0.7141381860900033,
+    "win_rate": 0.3684210526315789,
+    "n_trades": 19
+  },
+  "benchmark_total_return": -0.9286468786310341,
+  "spec": {
+    "name": "trend-rider",
+    "symbol": "CAKEUSDT",
+    "interval": "1d",
+    "start": null,
+    "end": null,
+    "initial_cash": 10000.0,
+    "signal": {
+      "type": "ema_crossover",
+      "lookback_days": 30,
+      "fast_ma": 10,
+      "slow_ma": 50,
+      "fng_buy_below": 20,
+      "fng_sell_above": 80
+    },
+    "regime_gate": {
+      "enabled": false,
+      "type": "hmm",
+      "n_states": 2,
+      "vol_lookback_days": 20,
+      "trade_in": "trend"
+    },
+    "sentiment_overlay": {
+      "enabled": false,
+      "fng_extreme_fear": 25,
+      "fng_extreme_greed": 75,
+      "fear_boost": 1.15,
+      "greed_trim": 0.5
+    },
+    "sizing": {
+      "type": "vol_target",
+      "target_vol": 1.0,
+      "vol_lookback_days": 20,
+      "max_leverage": 1.0,
+      "fraction": 1.0
+    },
+    "costs": {
+      "slippage_bps": 30.0,
+      "fee_bps": 25.0
+    },
+    "validation": {
+      "scheme": "walk_forward",
+      "train_days": 365,
+      "test_days": 90
+    }
+  }
+}
