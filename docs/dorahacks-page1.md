@@ -10,19 +10,9 @@ Strategy Forge
 ## BUIDL logo
 Upload `logo.png` (repo root) — 480×480 PNG, 27 KB. ✅ meets the spec.
 
-## Vision — "Describe the problem which this project solves"
+## Vision — "Describe the problem which this project solves"  (≤256 chars)
 ```
-Crypto traders and AI-agent builders have no fast, trustworthy way to validate a
-strategy idea. A rigorous backtest normally means writing quant code, sourcing data,
-and dodging subtle look-ahead bias — so most "backtests" are cherry-picked and
-impossible to reproduce.
-
-Strategy Forge is a CoinMarketCap Agent-Hub Skill that turns a plain-English strategy
-idea into a structured, backtestable spec and runs a walk-forward, cost-adjusted,
-look-ahead-safe backtest — reproducible with zero API keys. Idea to evidence in
-seconds: equity curve, Sharpe/Sortino/max-drawdown, and an honest out-of-sample
-verdict vs buy-and-hold. Live CoinMarketCap signals (Fear & Greed, dominance, price)
-annotate every run, and the same spec can later drive a live trading agent.
+Most crypto backtests are cherry-picked and irreproducible. Strategy Forge is a CoinMarketCap Skill: describe a strategy in plain English, get a rigorous, walk-forward, look-ahead-safe backtest you can reproduce with zero API keys — in seconds.
 ```
 
 ## Category
