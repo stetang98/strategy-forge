@@ -20,8 +20,9 @@ class TestStrategySpecParsing:
         assert spec.signal.lookback_days == 30
         assert spec.sizing.type == "vol_target"
         assert spec.costs.fee_bps == 25
-        assert spec.regime_gate.enabled is True
-        assert spec.sentiment_overlay.enabled is True
+        # gates/overlays are opt-in: a minimal spec is a clean momentum strategy
+        assert spec.regime_gate.enabled is False
+        assert spec.sentiment_overlay.enabled is False
 
     def test_json_round_trip_is_stable(self):
         spec = StrategySpec.model_validate(MINIMAL)

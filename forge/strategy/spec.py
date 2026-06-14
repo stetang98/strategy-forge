@@ -48,7 +48,7 @@ class SignalSpec(_Strict):
 class RegimeGateSpec(_Strict):
     """HMM market-regime gate: trade momentum only in the trending regime."""
 
-    enabled: bool = True
+    enabled: bool = False
     type: Literal["hmm"] = "hmm"
     n_states: int = Field(default=2, ge=2, le=4)
     vol_lookback_days: int = Field(default=20, gt=0)
@@ -58,7 +58,7 @@ class RegimeGateSpec(_Strict):
 class SentimentOverlaySpec(_Strict):
     """Fear & Greed overlay: tilt up in extreme fear, trim in extreme greed."""
 
-    enabled: bool = True
+    enabled: bool = False
     fng_extreme_fear: int = Field(default=25, ge=0, le=100)
     fng_extreme_greed: int = Field(default=75, ge=0, le=100)
     fear_boost: float = Field(default=1.15, ge=1.0, description="exposure multiplier in extreme fear")

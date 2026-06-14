@@ -1,0 +1,14 @@
+{
+  "name": "regime-guard",
+  "symbol": "CAKEUSDT",
+  "interval": "1d",
+  "start": "2021-01-01",
+  "end": "2026-06-13",
+  "initial_cash": 10000.0,
+  "signal": { "type": "ts_momentum", "lookback_days": 30, "fast_ma": 10, "slow_ma": 50 },
+  "regime_gate": { "enabled": true, "n_states": 2, "vol_lookback_days": 20, "trade_in": "trend" },
+  "sentiment_overlay": { "enabled": true, "fng_extreme_fear": 25, "fng_extreme_greed": 75, "fear_boost": 1.15, "greed_trim": 0.5 },
+  "sizing": { "type": "vol_target", "target_vol": 1.0, "vol_lookback_days": 20, "max_leverage": 1.0 },
+  "costs": { "slippage_bps": 30, "fee_bps": 25 },
+  "validation": { "scheme": "walk_forward", "train_days": 365, "test_days": 90 }
+}

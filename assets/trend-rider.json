@@ -1,0 +1,14 @@
+{
+  "name": "trend-rider",
+  "symbol": "BNBUSDT",
+  "interval": "1d",
+  "start": "2021-01-01",
+  "end": "2026-06-13",
+  "initial_cash": 10000.0,
+  "signal": { "type": "ema_crossover", "fast_ma": 10, "slow_ma": 50 },
+  "regime_gate": { "enabled": false },
+  "sentiment_overlay": { "enabled": false },
+  "sizing": { "type": "vol_target", "target_vol": 1.0, "vol_lookback_days": 20, "max_leverage": 1.0 },
+  "costs": { "slippage_bps": 30, "fee_bps": 25 },
+  "validation": { "scheme": "walk_forward", "train_days": 365, "test_days": 90 }
+}

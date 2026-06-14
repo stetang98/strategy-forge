@@ -1,0 +1,14 @@
+{
+  "name": "fgi-contrarian",
+  "symbol": "BNBUSDT",
+  "interval": "1d",
+  "start": "2021-01-01",
+  "end": "2026-06-13",
+  "initial_cash": 10000.0,
+  "signal": { "type": "fng_contrarian", "fng_buy_below": 25, "fng_sell_above": 75 },
+  "regime_gate": { "enabled": false },
+  "sentiment_overlay": { "enabled": false },
+  "sizing": { "type": "full", "max_leverage": 1.0 },
+  "costs": { "slippage_bps": 30, "fee_bps": 25 },
+  "validation": { "scheme": "none" }
+}
