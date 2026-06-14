@@ -146,10 +146,22 @@ X/Twitter: https://x.com/Stetang3438
 ---
 
 ## TAB 5 — SUBMISSION
-- **Hackathon**: BNB Hack: AI Trading Agent Edition
-- **Track**: `Track 2 — Strategy Skills`
-- **Special prize targeted**: Best Use of CoinMarketCap Agent Hub
-- **On-chain agent address (Track 1 only)**: N/A — Track 2 has no on-chain registration.
+- **Track**: `📊 Strategy Skills ($6,000)` ✅
+  - "Add More Tracks →": if a "Best Use of CoinMarketCap Agent Hub" (CMC special prize)
+    track is listed there, add it too; otherwise leave just Strategy Skills.
+- **Ask hackers questions** (contact):
+  ```
+  Telegram: @Stetang  (email: stetang98@gmail.com)
+  ```
+- **Ask BUIDLers questions** (contact):
+  ```
+  Telegram: @Stetang  (email: stetang98@gmail.com)
+  ```
+- **Share your agent address here (for track 1)**:
+  ```
+  N/A — Track 2 (Strategy Skills), no on-chain agent / registration
+  ```
+- ☑️ Check **"I agree to the Terms of Use Agreement and Participant Agreement"**
 
 ---
 
