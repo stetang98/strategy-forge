@@ -165,6 +165,26 @@ X/Twitter: https://x.com/Stetang3438
 
 ---
 
+## DEMO VIDEO SCRIPT (~75s, one-take terminal screen-recording)
+
+**Setup:** macOS QuickTime → File → New Screen Recording (or `Cmd+Shift+5`). Large
+terminal font. In the repo with the venv active: `cd ~/Desktop/BNB_Hack && source .venv/bin/activate`.
+Upload the result to YouTube (Unlisted is fine) and paste the link in the Demo video field.
+
+| Time | Do this on screen | Say / caption |
+|---|---|---|
+| 0:00–0:08 | Show the repo README (or just the terminal title) | "Most crypto backtests are cherry-picked and impossible to reproduce. Strategy Forge fixes that — describe a strategy in plain English, get a rigorous, reproducible backtest." |
+| 0:08–0:22 | Run: `python scripts/market_context.py --symbol BNB` | "Live CoinMarketCap Agent Hub data — Fear & Greed, dominance, price — pulled in real time." |
+| 0:22–0:33 | Run: `python scripts/backtest.py --spec assets/cake-trend-rider.json --out examples` | "It compiles a strategy spec and runs a walk-forward, cost-adjusted backtest." |
+| 0:33–0:52 | Run: `open examples/cake-trend-rider.png` (the chart opens) | "On CAKE — which fell 93% — the SAME trend strategy made +39% by exiting the downtrend. Buy-and-hold would've wiped you out." |
+| 0:52–1:05 | Run: `python -m pytest -q tests/ | tail -1` (shows `122 passed`) | "122 tests, ~94% coverage. 100% reproducible — no API key. `make demo` regenerates everything." |
+| 1:05–1:18 | Show `SKILL.md` or the GitHub repo page | "An installable CoinMarketCap Skill. BNB Hack Track 2, Best Use of Agent Hub. github.com/stetang98/strategy-forge." |
+
+**Tips:** captions are enough if you don't want voiceover. Keep each command's output on
+screen ~2–3s. The CAKE chart (0:33) is the money shot — let it linger.
+
+---
+
 ### Checklist
 - [x] TAB 1 Profile — name · logo · vision · category (L1=BNB Chain) · AI-Agent=No · GitHub · socials
 - [x] TAB 2 Details — full image-rich body
